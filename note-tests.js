@@ -56,11 +56,11 @@ function testNoteControllerHTML() {
       return "<ul><li><div>Favourite drink: coke</div></li></ul>";
     }
   };
-
-  var noteListViewDouble = new NoteListViewDouble(noteListDouble);
-  var noteController = new NoteController(noteListViewDouble);
+  
   var element = {innerHTML: "hello"}
-  noteController.getHTML(element)
+  var noteListViewDouble = new NoteListViewDouble(noteListDouble);
+  var noteController = new NoteController(noteListViewDouble, element);
+  noteController.getHTML()
   assert.isTrue(element.innerHTML === "<ul><li><div>Favourite drink: coke</div></li></ul>")
 };
 

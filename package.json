@@ -1,0 +1,22 @@
+{
+  "name": "notes_app_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simone-smith/notes_app_js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simone-smith/notes_app_js/issues"
+  },
+  "homepage": "https://github.com/simone-smith/notes_app_js#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
