@@ -25,3 +25,43 @@ function testNoteListView() {
 };
 
 testNoteListView();
+
+function testInstatiateNoteController() {
+  function NoteListDouble() {};
+
+  NoteListDouble.prototype = {
+    addNote: function() {}
+  };
+
+  var noteListDouble = new NoteListDouble();
+  var noteController = new NoteController(noteListDouble);
+  assert.isTrue(noteController)
+};
+
+testInstatiateNoteController();
+
+function testNoteControllerHTML() {
+  function NoteListDouble() {};
+
+  NoteListDouble.prototype = {
+    addNote: function() {}
+  };
+
+  var noteListDouble = new NoteListDouble();
+
+  function NoteListViewDouble(noteListDouble) {};
+
+  NoteListViewDouble.prototype = {
+    returnHTML: function() {
+      return "<ul><li><div>Favourite drink: coke</div></li></ul>";
+    }
+  };
+
+  var noteListViewDouble = new NoteListViewDouble(noteListDouble);
+  var noteController = new NoteController(noteListViewDouble);
+  var element = {innerHTML: "hello"}
+  noteController.getHTML(element)
+  assert.isTrue(element.innerHTML === "<ul><li><div>Favourite drink: coke</div></li></ul>")
+};
+
+testNoteControllerHTML();
