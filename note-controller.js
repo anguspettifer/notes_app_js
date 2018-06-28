@@ -22,8 +22,8 @@ var noteController = new NoteController(noteListView, element);
 noteController.getHTML();
 
 //Displaying single note
-var note = new Note("Notey McNoteFace")
-var singleNoteView = new SingleNoteView(note);
-var element = document.getElementById('app');
-var noteController = new NoteController(singleNoteView, element);
-noteController.getHTML();
+// var note = new Note("Notey McNoteFace")
+// var singleNoteView = new SingleNoteView(note);
+// var element = document.getElementById('app');
+// var noteController = new NoteController(singleNoteView, element);
+// noteController.getHTML();

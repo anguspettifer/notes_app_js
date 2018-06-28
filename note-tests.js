@@ -37,7 +37,7 @@ function testNoteListView() {
   noteList.addNote("First note which is more than 20 characters");
   noteList.addNote("Second note");
   var noteListView = new NoteListView(noteList);
-  assert.isTrue(noteListView.returnHTML().includes("<ul><li><div>First note which is </div></li><li><div>Second note</div></li></ul>"));
+  assert.isTrue(noteListView.returnHTML().includes(`<ul><li><div><a href="#notes/0">First note which is </a></div></li><li><div><a href="#notes/1">Second note</a></div></li></ul>`));
 };
 
 testNoteListView();
