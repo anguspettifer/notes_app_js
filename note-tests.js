@@ -56,7 +56,7 @@ function testNoteControllerHTML() {
       return "<ul><li><div>Favourite drink: coke</div></li></ul>";
     }
   };
-  
+
   var element = {innerHTML: "hello"}
   var noteListViewDouble = new NoteListViewDouble(noteListDouble);
   var noteController = new NoteController(noteListViewDouble, element);
@@ -65,3 +65,22 @@ function testNoteControllerHTML() {
 };
 
 testNoteControllerHTML();
+
+function testSingleNoteView() {
+
+  function NoteDouble(text){
+    this.text = text;
+  };
+
+  NoteDouble.prototype = {
+    returnNoteText: function() {
+      return this.text;
+    }
+  };
+
+  var noteDouble = new NoteDouble("Notey McNoteFace")
+  var singleNoteView = new SingleNoteView(noteDouble);
+  assert.isTrue(singleNoteView.returnHTML().includes("<div>Notey McNoteFace</div>"));
+};
+
+testSingleNoteView()
