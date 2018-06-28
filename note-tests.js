@@ -1,11 +1,18 @@
 function testNoteText() {
   var note = new Note("My favourite language is JavaScript");
-  assert.isTrue(note.text === "My favourite language is JavaScript");
+  assert.isTrue(note.returnNoteText() === "My favourite language is JavaScript");
 };
 
 testNoteText();
 
-function testNoteList() {
+function testNoteId() {
+  var note = new Note("text", 5);
+  assert.isTrue(note.returnNoteId() === 5);
+};
+
+testNoteId();
+
+function testNoteListText() {
   var noteList = new NoteList();
   noteList.addNote("My favourite language is JavaScript");
   noteList.addNote("My favourite language is Ruby");
@@ -13,7 +20,17 @@ function testNoteList() {
   assert.isTrue(noteList.noteArray[1]['text'] === "My favourite language is Ruby" );
 };
 
-testNoteList();
+testNoteListText();
+
+function testNoteListId() {
+  var noteList = new NoteList();
+  noteList.addNote("text one");
+  noteList.addNote("text two");
+  assert.isTrue(noteList.noteArray[0]['id'] === 0);
+  assert.isTrue(noteList.noteArray[1]['id'] === 1);
+}
+
+testNoteListId();
 
 function testNoteListView() {
   var noteList = new NoteList();

@@ -9,7 +9,8 @@
   };
 
   NoteList.prototype.addNote = function (text) {
-    var note = new Note(text);
+    var id = this.noteArray.length;
+    var note = new Note(text, id);
     this.noteArray.push(note);
   };
 
