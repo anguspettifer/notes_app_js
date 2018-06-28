@@ -5,7 +5,6 @@ function testNoteText() {
 
 testNoteText();
 
-
 function testNoteList() {
   var noteList = new NoteList();
   noteList.addNote("My favourite language is JavaScript");
@@ -18,10 +17,10 @@ testNoteList();
 
 function testNoteListView() {
   var noteList = new NoteList();
-  noteList.addNote("First note");
+  noteList.addNote("First note which is more than 20 characters");
   noteList.addNote("Second note");
   var noteListView = new NoteListView(noteList);
-  assert.isTrue(noteListView.returnHTML().includes("<ul><li><div>First note</div></li><li><div>Second note</div></li></ul>"));
+  assert.isTrue(noteListView.returnHTML().includes("<ul><li><div>First note which is </div></li><li><div>Second note</div></li></ul>"));
 };
 
 testNoteListView();

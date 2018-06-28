@@ -8,7 +8,7 @@
     var listHTML = `<ul>`
     var noteArray = this.noteList.returnNoteArray()
     noteArray.forEach(function(note){
-      listHTML += `<li><div>${note.returnNoteText()}</div></li>`;
+      listHTML += `<li><div>${note.returnNoteText().slice(0,20)}</div></li>`;
     });
     listHTML += `</ul>`
     return listHTML
