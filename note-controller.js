@@ -9,6 +9,14 @@
     this.element.innerHTML = this.noteListView.returnHTML()
   };
 
+
+  NoteController.prototype.displayNote = function (noteId) {
+    for (var i=0; i < this.noteList.returnNoteArray().length; i++) {
+      if(this.noteList.returnNoteArray()[i].returnNoteId() === parseInt(noteId)) {
+        return this.noteList.returnNoteArray()[i].returnNoteText();
+      }
+    }
+  };
   exports.NoteController = NoteController;
 })(this);
 
@@ -33,10 +41,10 @@ function getNoteFromUrl(location) {
   return location.hash.split("#notes/")[1];
 };
 
-function showNote(note) {
+function showNote(noteId) {
   document
     .getElementById("app")
-    .innerHTML = note;
+    .innerHTML = noteController.displayNote(noteId);
 };
 
 console.log(location.hash.split("#notes/")[1]);
