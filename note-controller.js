@@ -21,7 +21,6 @@
 })(this);
 
 
-
 //Displaying note list
 var noteList = new NoteList();
 noteList.addNote("Favourite drink: orangina", Note);
@@ -47,9 +46,22 @@ function showNote(noteId) {
     .innerHTML = noteController.displayNote(noteId);
 };
 
-console.log(location.hash.split("#notes/")[1]);
-
 makeUrlChangeShowSingleNote();
+
+function submitNote() {
+  window.addEventListener("submit", function(event) {
+    event.preventDefault();
+    submit();
+  });
+};
+
+function submit() {
+  var note1 = document.getElementById('note').value
+  noteList.addNote(note1, Note);
+  noteController.getHTML();
+}
+
+submitNote()
 //Displaying single note
 // var note = new Note("Notey McNoteFace")
 // var singleNoteView = new SingleNoteView(note);
