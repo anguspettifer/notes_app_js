@@ -15,7 +15,7 @@
 
 //Displaying note list
 var noteList = new NoteList();
-noteList.addNote("Favourite drink: orangina");
+noteList.addNote("Favourite drink: orangina", Note);
 var noteListView = new NoteListView(noteList)
 var element = document.getElementById('app');
 var noteController = new NoteController(noteListView, element);
